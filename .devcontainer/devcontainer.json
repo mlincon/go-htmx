@@ -62,13 +62,24 @@
         "files.trimFinalNewlines": true,
         "diffEditor.ignoreTrimWhitespace": false,
         "jupyter.interactiveWindow.textEditor.executeSelection": true,
-        "window.commandCenter": true
+        "window.commandCenter": true,
+        "[go]":{
+            "editor.insertSpaces": false,
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": true
+            }
+        },
+        "gopls": {
+            "formatting.gofumpt": true
+        }
       },
 
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "GitHub.vscode-pull-request-github",
         "GitHub.codespaces",
+        "golang.go",
         "github.vscode-github-actions",
         "ms-python.vscode-pylance",
         "ms-python.isort",
