@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.postgresql
-    volumes:
-      - ./db_volume:/var/lib/postgresql/data
+    # volumes:
+    #   - ./db_volume:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
