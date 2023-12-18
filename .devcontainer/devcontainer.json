@@ -66,15 +66,15 @@
         "diffEditor.ignoreTrimWhitespace": false,
         "jupyter.interactiveWindow.textEditor.executeSelection": true,
         "window.commandCenter": true,
-        "[go]":{
-            "editor.insertSpaces": false,
-            "editor.formatOnSave": true,
-            "editor.codeActionsOnSave": {
-                "source.organizeImports": true
-            }
+        "[go]": {
+          "editor.insertSpaces": false,
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+          }
         },
         "gopls": {
-            "formatting.gofumpt": true
+          "formatting.gofumpt": true
         }
       },
 
@@ -116,5 +116,7 @@
       ]
     }
   },
-  "forwardPorts": [3000, 5000]
+  "forwardPorts": [3000, 5000, 8000],
+
+  "onCreateCommand": "sh ./.devcontainer/onCreateCommand.sh"
 }
