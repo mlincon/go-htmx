@@ -1,0 +1,9 @@
+FROM postgres:13-alpine
+
+ENV POSTGRES_USER=admin
+ENV POSTGRES_DB=todo
+ENV POSTGRES_PASSWORD=pass
+
+COPY initdb/init.sql /docker-entrypoint-initdb.d
+
+CMD ["docker-entrypoint.sh", "postgres"]
