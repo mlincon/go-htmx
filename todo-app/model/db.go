@@ -38,8 +38,6 @@ func Setup() {
 		sslmode,
 	)
 
-	fmt.Println(connStr)
-
 	var err error
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
