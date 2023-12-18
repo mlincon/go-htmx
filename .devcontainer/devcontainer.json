@@ -118,5 +118,7 @@
   },
   "forwardPorts": [3000, 5000, 8000],
 
-  "onCreateCommand": "sh ./.devcontainer/onCreateCommand.sh"
+  "onCreateCommand": "sh ./.devcontainer/onCreateCommand.sh",
+
+  "postCreateCommand": "sh ./.devcontainer/postCreateCommand.sh"
 }
