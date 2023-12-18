@@ -52,7 +52,7 @@ repos:
     hooks:
       - id: hadolint
         args:
-          - todo-app/Dockerfile
+          - todo-app/Dockerfile.postgresql
 
 ci:
   autofix_commit_msg: 🎨 [pre-commit.ci] Auto format from pre-commit.com hooks
