@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 )
 
 var db *sql.DB
@@ -37,14 +38,20 @@ func Setup() {
 		sslmode,
 	)
 
+	fmt.Println(connStr)
+
 	var err error
 	db, err = sql.Open("postgres", connStr)
 	if err != nil {
 		fmt.Println("Could not connect to db", err)
+	} else {
+		fmt.Println("Connected to db")
 	}
 
 	err = db.Ping()
 	if err != nil {
 		fmt.Println("Could not ping db", err)
+	} else {
+		fmt.Println("Successfully pinged to db")
 	}
 }
