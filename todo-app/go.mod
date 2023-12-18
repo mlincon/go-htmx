@@ -1,4 +1,4 @@
-module github.com/mlincon/go_htmx/todo-app
+module todo-app
 
 go 1.21.5
 
