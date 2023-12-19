@@ -118,6 +118,7 @@
         "mtxr.sqltools",
         "samuelcolvin.jinjahtml",
         "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
         "christian-kohler.path-intellisense",
         "ecmel.vscode-html-css",
         "sidthesloth.html5-boilerplate"
