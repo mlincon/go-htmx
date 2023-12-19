@@ -28,8 +28,12 @@
         "editor.rulers": [80, 88, 100, 120],
         "files.autoSave": "afterDelay",
         "[html]": {
-          "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+          "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+          "editor.foldingStrategy": "indentation"
         },
+        "html.autoClosingTags": true,
+        "editor.linkedEditing": true,
+        "html.format.wrapLineLength": 100,
         "[json]": {
           "editor.defaultFormatter": "vscode.json-language-features"
         },
@@ -112,7 +116,11 @@
         "rvest.vs-code-prettier-eslint",
         "ritwickdey.LiveServer",
         "mtxr.sqltools",
-        "samuelcolvin.jinjahtml"
+        "samuelcolvin.jinjahtml",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ecmel.vscode-html-css",
+        "sidthesloth.html5-boilerplate"
       ]
     }
   },
