@@ -13,10 +13,12 @@ import (
 var db *sql.DB
 
 func Setup() {
-	// Load environment variables from .env file
-	dotenv := ".local.env"
-	if err := godotenv.Load(dotenv); err != nil {
-		log.Fatal("Error loading .env file")
+	// Load environment variables from .env file if ENV is not set
+	if _, exists := os.LookupEnv("ENV"); !exists {
+		dotenv := ".local.env"
+		if err := godotenv.Load(dotenv); err != nil {
+			log.Fatal("Error loading .env file")
+		}
 	}
 
 	// Retrieve values from environment variables

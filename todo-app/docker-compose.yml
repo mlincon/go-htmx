@@ -9,9 +9,13 @@ services:
     depends_on:
       - postgres
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_DB=todo
-      - POSTGRES_PASSWORD=pass
+      - ENV=docker
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=admin
+      - DB_PASSWORD=pass
+      - DB_NAME=todo
+      - DB_SSLMODE=disable
 
   postgres:
     ports:
