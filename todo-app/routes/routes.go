@@ -86,10 +86,15 @@ func deleteTodo(w http.ResponseWriter, r *http.Request) {
 func SetupAndRun() {
 	mux := mux.NewRouter()
 
+	// create handlers/routes
 	mux.HandleFunc("/", loadAlltodos)
 	mux.HandleFunc("/create", createTodo).Methods("POST")
 	mux.HandleFunc("/todo/{id}", markTodo).Methods("PUT")
 	mux.HandleFunc("/todo/{id}", deleteTodo).Methods("DELETE")
 
+	// load static files
+	mux.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
+
+	// start server
 	log.Fatal(http.ListenAndServe(":8000", mux))
 }
