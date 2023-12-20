@@ -19,7 +19,7 @@ func sendTodos(w http.ResponseWriter) {
 		return
 	}
 
-	tmpl := template.Must(template.ParseFiles("templates/index.html"))
+	tmpl := template.Must(template.ParseFiles("static/index.html"))
 
 	err = tmpl.ExecuteTemplate(w, "Todos", todos)
 	if err != nil {
@@ -33,7 +33,7 @@ func loadAlltodos(w http.ResponseWriter, r *http.Request) {
 		log.Fatal("Could not get all todos from db. Error: ", err)
 	}
 
-	tmpl := template.Must(template.ParseFiles("templates/index.html"))
+	tmpl := template.Must(template.ParseFiles("static/index.html"))
 
 	err = tmpl.Execute(w, todos)
 	if err != nil {
