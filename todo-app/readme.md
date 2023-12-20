@@ -7,3 +7,4 @@ Reads:
 - https://www.alexedwards.net/blog/serving-static-sites-with-go
 - https://github.com/17OChris/htmx-go/blob/main/Dockerfile
 - https://medium.com/@lizrice/non-privileged-containers-based-on-the-scratch-image-a80105d6d341
+- https://stackoverflow.com/a/75636903

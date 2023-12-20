@@ -1,9 +1,5 @@
 FROM golang:1.21-alpine AS builder
 
-# Create group and user
-RUN addgroup -g 10001 -S nonroot \
-    && adduser -u 10000 -S -G nonroot -h /home/nonroot nonroot
-
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -24,25 +20,22 @@ COPY . .
 # /main.go: This is the input source file for the go build command
 RUN CGO_ENABLED=0 go build -o /app ./main.go
 
-# Create group and user for non-root/unprivileged user
-RUN addgroup -g 10001 -S nonroot \
-    && adduser -u 10000 -S -G nonroot -h /home/nonroot nonroot
-
 # Use a minimal base image for the final runtime container
-FROM scratch AS app
-
-# Copy only the necessary files from the builder image
-COPY --from=builder /app /app
+# FROM scratch AS app
+FROM alpine:3 AS application
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# change to non-root user created in builder stage
+# Copy only the necessary files from the builder image
+COPY --from=builder /app /app
+
+# Create a non-root user and group and set proper ownership for the app directory
+RUN addgroup -S nonroot && adduser -S -G nonroot nonroot
+RUN chown -R nonroot:nonroot /app
 USER nonroot
 
-# Expose the port that your Go application will run on
 EXPOSE 8000
 
 # Run the executable
-# ENTRYPOINT ["/app"]
-CMD ["/app"]
+ENTRYPOINT ["/app/main"]
