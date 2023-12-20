@@ -1,5 +1,18 @@
 version: "3"
 services:
+  go:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=todo
+      - POSTGRES_PASSWORD=pass
+
   postgres:
     ports:
       - 5432:5432
