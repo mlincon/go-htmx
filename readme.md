@@ -21,3 +21,7 @@ go work use project-two
 ```
 
 ref: https://stackoverflow.com/a/72131169
+
+### ToDos
+
+- add pre-commit checks for Go
