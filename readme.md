@@ -3,6 +3,7 @@
 ```bash
 go mod init <project>
 go get github.com/joho/godotenv
+go mod tidy
 ```
 
 `<project>` can be a string or a reference to a (GitHub) repo.
