@@ -1,6 +1,7 @@
 go 1.21.5
 
 use (
-    todo-app
-    film-list-app
+	./film-list-app
+	./form-input
+	./todo-app
 )

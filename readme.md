@@ -12,6 +12,7 @@ Ref:
 
 - https://www.digitalocean.com/community/tutorials/how-to-use-go-modules
 - https://www.alexedwards.net/blog/an-introduction-to-packages-imports-and-modules
+- https://varunksaini.com/using-workspaces-go/
 
 ### Support for multi-module workspaces
 
