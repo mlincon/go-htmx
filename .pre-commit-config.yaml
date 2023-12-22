@@ -54,6 +54,16 @@ repos:
         args:
           - todo-app/Dockerfile.postgresql
 
+  # go lints
+  - repo: https://github.com/dnephin/pre-commit-golang
+    rev: v0.5.0
+    hooks:
+      - id: go-fmt
+      - id: golangci-lint
+      # - id: go-imports
+      # - id: no-go-testing
+      # - id: go-unit-tests
+
 ci:
   autofix_commit_msg: 🎨 [pre-commit.ci] Auto format from pre-commit.com hooks
   autoupdate_commit_msg: ⬆ [pre-commit.ci] pre-commit autoupdate
