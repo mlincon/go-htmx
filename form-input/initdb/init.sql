@@ -12,7 +12,7 @@ CREATE TABLE form.users (
 DROP TABLE IF EXISTS form.comments;
 CREATE TABLE form.comments (
     comment_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    user_id CHAR(36), -- uuid
+    user_id UUID, -- CHAR(36)
     product TEXT,
     category TEXT,
     comment TEXT,
