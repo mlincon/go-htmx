@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"form-input/routes"
+)
 
 func main() {
-	fmt.Println("run")
+	fmt.Println("runs")
+
+	routes.Serve()
 }
